@@ -1,0 +1,4 @@
+include README.md
+include requirements.txt
+include cantares/ui/styles.tcss
+recursive-include cantares/ui/styles *.tcss
