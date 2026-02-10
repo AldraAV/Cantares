@@ -1,6 +1,6 @@
 # Cantares
 > *"Porque lo bueno siempre se comparte"*
-Desarrollada con amor y escrita en Python. 🐍💖
+Developed with love and written in Python. 🐍💖
 ---
 
 **Cantares** is an open-source CLI/TUI application for downloading high-quality music and books. It integrates with Deezer APIs (via `deezspot` logic) and scraping sources for books.

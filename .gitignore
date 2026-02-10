@@ -17,8 +17,8 @@ build/
 
 # Local data
 *.log
-Music/
-Books/
+/Music/
+/Books/
 research_repos/
 ffmpeg.zip
 bin/ffmpeg.exe
