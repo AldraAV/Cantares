@@ -1,0 +1,11 @@
+click
+requests
+rich
+spotipy
+yt-dlp
+textual
+python-telegram-bot
+mutagen
+python-dotenv
+beautifulsoup4
+lxml

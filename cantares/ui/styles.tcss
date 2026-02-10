@@ -1,0 +1,64 @@
+Screen {
+    layout: vertical;
+}
+
+#home_container {
+    align: center middle;
+}
+
+#welcome_title {
+    content-align: center middle;
+    text-style: bold;
+    color: $accent;
+    margin-bottom: 2;
+}
+
+#subtitle {
+    content-align: center middle;
+    color: $text-muted;
+    margin-bottom: 4;
+}
+
+.menu_buttons {
+    width: 40;
+    align: center middle;
+}
+
+Button {
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#title {
+    content-align: center middle;
+    text-style: bold;
+    background: $primary;
+    color: $text;
+    padding: 1;
+    width: 100%;
+    margin-bottom: 2;
+}
+
+#main_container {
+    padding: 2;
+}
+
+#search_input {
+    margin-bottom: 1;
+}
+
+.btn-container {
+    height: auto;
+    align: right middle;
+    margin-bottom: 2;
+}
+
+#download_btn {
+    width: 20;
+}
+
+RichLog {
+    border: solid $secondary;
+    height: 1fr;
+    background: $surface;
+}

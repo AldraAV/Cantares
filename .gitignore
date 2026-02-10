@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+
+# Local data
+*.log
+Music/
+Books/
+research_repos/
+ffmpeg.zip
+bin/ffmpeg.exe
+bin/ffprobe.exe
+
+# System
+Thumbs.db
+Desktop.ini
+
+# Cleanup / scripts excluded
+debug_*.py
+install_ffmpeg*.ps1
+si.md
+create_repo.py
