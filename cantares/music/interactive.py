@@ -7,6 +7,26 @@ from .spotify import SpotifyClient
 
 console = Console()
 
+def normalize_track(t):
+    """Normalize GW API track object to standard keys."""
+    if 'SNG_TITLE' in t:
+        art_name = t.get('ART_NAME')
+        if not art_name and 'SNG_CONTRIBUTORS' in t:
+             art_name = t['SNG_CONTRIBUTORS'].get('main_artist', ['Unknown'])[0]
+             
+        return {
+            'title': t.get('SNG_TITLE'),
+            'artist': {'name': art_name},
+            'album': {'title': t.get('ALB_TITLE'), 'cover_xl': f"https://e-cdns-images.dzcdn.net/images/cover/{t.get('ALB_PICTURE', '')}/1000x1000-000000-80-0-0.jpg"},
+            'duration': int(t.get('DURATION', 0)),
+            'id': t.get('SNG_ID'),
+             # Persist needed internal keys for download (MD5_ORIGIN etc)
+            'MD5_ORIGIN': t.get('MD5_ORIGIN'),
+            'MEDIA_VERSION': t.get('MEDIA_VERSION'),
+            'SNG_ID': t.get('SNG_ID')
+        }
+    return t
+
 def interactive_search(query):
     # 1. If URL, return directly
     if "spotify.com" in query or "deezer.com" in query:
@@ -19,7 +39,8 @@ def interactive_search(query):
         console.print("[red]❌ No results found.[/red]")
         return None, None
 
-    tracks = results['data']
+    raw_tracks = results['data']
+    tracks = [normalize_track(t) for t in raw_tracks]
     
     # 2. Display Table
     table = Table(title=f"Resultados para: {query}")
@@ -30,7 +51,8 @@ def interactive_search(query):
     table.add_column("Duración", style="blue")
 
     for idx, t in enumerate(tracks):
-        duration = f"{t['duration'] // 60}:{t['duration'] % 60:02d}"
+        dur_sec = int(t.get('duration', 0))
+        duration = f"{dur_sec // 60}:{dur_sec % 60:02d}"
         table.add_row(str(idx + 1), t['title'], t['artist']['name'], t['album']['title'], duration)
 
     console.print(table)

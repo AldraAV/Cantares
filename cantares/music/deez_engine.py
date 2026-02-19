@@ -70,6 +70,9 @@ class DeezUtils:
 class DeezAPI:
     def __init__(self, arl=None):
         self.session = requests.Session()
+        self.session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        })
         self.arl = arl
         self.token = None
         self.license_token = None
@@ -118,7 +121,7 @@ class DeezAPI:
         return self.gw_request("deezer.getUserData")
 
     def search_track(self, query):
-        body = {"query": query, "start": 0, "nb": 5, "types": ["TRACK"]}
+        body = {"query": query, "filter": 0, "output": "TRACK", "start": 0, "nb": 5, "types": ["TRACK"]}
         return self.gw_request("search.music", body)
 
     def get_track_data(self, song_id):

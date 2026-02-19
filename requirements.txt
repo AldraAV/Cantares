@@ -9,3 +9,4 @@ mutagen
 python-dotenv
 beautifulsoup4
 lxml
+pycryptodome

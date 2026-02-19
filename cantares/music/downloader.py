@@ -39,6 +39,10 @@ class MusicDownloader:
                 'preferredquality': '320',
             }],
             'quiet': True,
+            'socket_timeout': 30,
+            'retries': 10,
+            'fragment_retries': 10,
+            'nocheckcertificate': True,
         }
 
         if self.deez_api.token or self.deez_api.arl:

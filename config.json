@@ -1,0 +1,10 @@
+{
+  "arl": "9b65016ab32d02409fbbb712406a6b14fcf8f3cc0a0d8695e153eea3856d8faac508a62faba68e59077050a41dfbf91eaaf65f89ac5ad97e97e9586fa19f65a8817db637915e9af5d5436df16b922b6941c20d9e2eecaa3277b1afc3d649da11",
+  "downloadLocation": "Downloads/test_diag",
+  "tracknameTemplate": "%artist% - %title%",
+  "createPlaylistFolder": false,
+  "createArtistFolder": false,
+  "createAlbumFolder": false,
+  "downloadArtwork": true,
+  "fallbackBitrate": true
+}

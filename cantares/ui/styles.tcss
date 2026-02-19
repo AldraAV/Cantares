@@ -1,50 +1,120 @@
+/* 
+   Cantares Premium Theme 
+   Palette: Deep Space Violet & Amber Gold
+*/
+
+$background: #10002b;
+$surface: #240046;
+$primary: #7b2cbf;
+$secondary: #ff9e00;
+$text: #e0aaff;
+$text-muted: #9d4edd;
+$success: #38b000;
+$error: #d00000;
+
 Screen {
     layout: vertical;
+    background: $background;
+    color: $text;
 }
 
-#home_container {
-    align: center middle;
+/* --- Typography --- */
+
+Label {
+    color: $text;
 }
 
 #welcome_title {
     content-align: center middle;
     text-style: bold;
-    color: $accent;
-    margin-bottom: 2;
+    color: $secondary;
+    margin-top: 2;
+    margin-bottom: 1;
+    text-align: center;
 }
 
 #subtitle {
     content-align: center middle;
     color: $text-muted;
     margin-bottom: 4;
-}
-
-.menu_buttons {
-    width: 40;
-    align: center middle;
-}
-
-Button {
-    width: 100%;
-    margin-bottom: 1;
+    text-align: center;
 }
 
 #title {
     content-align: center middle;
     text-style: bold;
     background: $primary;
-    color: $text;
+    color: #ffffff;
     padding: 1;
     width: 100%;
     margin-bottom: 2;
+    border-bottom: heavy $secondary;
+}
+
+/* --- Layouts --- */
+
+#home_container {
+    align: center middle;
+    padding: 2;
 }
 
 #main_container {
     padding: 2;
+    height: 100%;
 }
 
-#search_input {
+.menu_buttons {
+    width: 50;
+    align: center middle;
+    border: heavy $surface;
+    padding: 1;
+}
+
+/* --- Inputs & Buttons --- */
+
+Input {
+    dock: top;
     margin-bottom: 1;
+    border: tall $primary;
+    background: $surface;
+    color: $text;
+}
+
+Input:focus {
+    border: tall $secondary;
+}
+
+Button {
+    width: 100%;
+    margin-bottom: 1;
+    background: $surface;
+    color: $text;
+    border: none;
+}
+
+Button:hover {
+    background: $primary;
+    color: #ffffff;
+}
+
+Button.-primary {
+    background: $primary;
+    color: #ffffff;
+}
+
+Button.-success {
+    background: $success;
+    color: #ffffff;
+}
+
+Button.-warning {
+    background: $secondary;
+    color: #000000;
+}
+
+Button.-error {
+    background: $error;
+    color: #ffffff;
 }
 
 .btn-container {
@@ -54,11 +124,38 @@ Button {
 }
 
 #download_btn {
-    width: 20;
+    width: 30;
+    background: $secondary;
+    color: #000000;
+    text-style: bold;
 }
 
+#download_btn:hover {
+    background: #ffaa00;
+}
+
+/* --- Widgets --- */
+
 RichLog {
-    border: solid $secondary;
+    border: solid $primary;
     height: 1fr;
+    background: #0a001a;
+    color: $text;
+    scrollbar-color: $secondary;
+}
+
+ProgressBar {
+    width: 100%;
+    height: 1;
+    margin-bottom: 1;
+    color: $secondary;
     background: $surface;
+    display: none; /* Hidden by default */
+}
+
+.loading-indicator {
+    color: $secondary;
+    height: 1;
+    content-align: center middle;
+    display: none;
 }
