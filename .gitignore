@@ -33,3 +33,9 @@ debug_*.py
 install_ffmpeg*.ps1
 si.md
 create_repo.py
+research_repos/
+Music/
+Downloads/
+ffmpeg_temp/
+.cache/
+*.egg-info/
