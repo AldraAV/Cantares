@@ -39,3 +39,5 @@ Downloads/
 ffmpeg_temp/
 .cache/
 *.egg-info/
+
+graphify-out/
