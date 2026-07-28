@@ -41,3 +41,5 @@ ffmpeg_temp/
 *.egg-info/
 
 graphify-out/
+.cache
+Descargas_Spotify_Likeadas/
